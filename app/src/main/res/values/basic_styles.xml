@@ -1,0 +1,159 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="Layout"></style>
+
+    <style name="Layout.FillWidth">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Layout.FillWidthHeight">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="Layout.WrapWidthHeight">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Layout.FillHeight">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="Layout.FillHeight.Center" parent="Layout.FillHeight">
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Layout.FillWidth.Center" parent="Layout.FillWidth">
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Layout.FillWidth.Vertical">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="Layout.FillWidthHeight.Vertical">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="Layout.WrapWidthHeight.Vertical">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="Layout.FillWidthHeight.Weight">
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="Layout.FillWidthHeight.Weight.VerticalCenter" parent="Layout.FillWidthHeight.Weight">
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Layout.FillWidthHeight.Weight.HorizontalCenter" parent="Layout.FillWidthHeight.Weight">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Layout.FillWidthHeight.BiggerWeight.VerticalCenter" parent="Layout.FillWidthHeight">
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_weight">1.3</item>
+    </style>
+
+    <style name="Layout.FillWidthHeight.Weight.Center">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="Layout.Weight">
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="Layout.Weight.Width">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Layout.Weight.WidthFillHeight">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="Layout.Weight.Height">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">0dp</item>
+    </style>
+
+    <style name="Layout.Weight.HeightFillWidth">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+    </style>
+
+    <style name="LayoutFillWidthHW">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">4dp</item>
+    </style>
+
+    <style name="Layout.FillWidth.Weight" parent="Layout.FillWidth">
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="Layout.FillWidth.BiggerWeight" parent="Layout.FillWidth">
+        <item name="android:layout_weight">1.4</item>
+    </style>
+
+    <style name="Layout.FillWidth.Weight.Vertical" parent="Layout.FillWidth.Weight">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="Layout.FillWidth.Weight.Vertical.Center" parent="Layout.FillWidth.Weight.Vertical">
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Layout.FillWidth.Weight.Center" parent="Layout.FillWidth">
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="LayoutFillWidthHWNoMargin">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">0dp</item>
+    </style>
+
+    <style name="Text">
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Text.FillWidth">
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="Text.WrapWidth">
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="Text.FillWidth.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.WrapWidth.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.FillWidth.Italic">
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="Text.WrapWidth.Italic">
+        <item name="android:textStyle">italic</item>
+    </style>
+
+
+</resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <!--User color-->
+
+    <color name="username0">#e21400</color>
+    <color name="username1">#91580f</color>
+    <color name="username2">#f8a700</color>
+    <color name="username3">#f78b00</color>
+    <color name="username4">#58dc00</color>
+    <color name="username5">#287b00</color>
+    <color name="username6">#a8f07a</color>
+    <color name="username7">#4ae8c4</color>
+    <color name="username8">#3b88eb</color>
+    <color name="username9">#3824aa</color>
+    <color name="username10">#a700ff</color>
+    <color name="username11">#d300e7</color>
+
+    <!-- Common color -->
+    <color name="cmn_black">#000</color>
+    <color name="cmn_white">#ffffff</color>
+    <color name="cmn_transparent">#00000000</color>
+    <color name="cmn_white_gray">#f5f5f5</color>
+    <color name="cmn_white_transparent">#80ffffff</color>
+    <color name="cmn_gray">#757575</color>
+    <color name="cmn_gray_bold">#6b6666</color>
+    <color name="cmn_gray_hint">#b3b3b3</color>
+    <color name="cmn_gray_light">#EFEFEF</color>
+    <color name="cmn_gray_bg">#f7f7f7</color>
+    <color name="cmn_gray_ranking_button">#e7e7e7</color>
+    <color name="color_txt_detail">#4c4c4c</color>
+
+    <color name="cmn_blue">#085EAB</color>
+    <color name="cmn_green">#00b277</color>
+    <color name="cmn_red">#c62828</color>
+    <color name="cmn_yellow">#e6af21</color>
+    <color name="cmn_tab_indicator">#e6e765</color>>
+    <color name="cmn_text_dark">#807f7f</color>
+    <color name="cmn_text_black">#4a4b4c</color>
+    <color name="cmn_text_hint_white">#D0EDEA</color>
+    <color name="cmn_text_red">#c62827</color>
+    <color name="cmn_text_green">#6ec408</color>
+    <color name="cmn_grey_border">#a0a0a0</color>
+    <color name="cmn_blue_button">#1d68bf</color>
+    <color name="cmn_grey_button">#bcbcbc</color>
+    <color name="cmn_grey_button2">#e6e6e6</color>
+    <color name="cmn_red_text_view">#c22629</color>
+    <color name="cmn_blue_text_view">#1665c1</color>
+    <color name="cmn_background">#f1f2f2</color>
+    <color name="cmn_background_divider">#DDD</color>
+    <color name="cmn_seek_bar_active">#509bd8</color>
+    <color name="cmn_seek_bar_thumbnail_normal">#f1f1f2</color>
+    <color name="cmn_seek_bar_thumbnail_border">#999</color>
+    <color name="cmn_bg_tutorial">#6C6C6C</color>
+    <color name="cmn_bg_dot">#535353</color>
+</resources>

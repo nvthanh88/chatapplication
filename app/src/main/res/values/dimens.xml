@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="spacing">10dp</dimen>
+    <dimen name="text_normal">@dimen/_11sdp</dimen>
+    <dimen name="text_small">@dimen/_9sdp</dimen>
+    <dimen name="text_smaller">@dimen/_8sdp</dimen>
+    <dimen name="text_smallest">@dimen/_7sdp</dimen>
+    <dimen name="item_chat_height">@dimen/_50sdp</dimen>
+</resources>

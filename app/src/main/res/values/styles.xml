@@ -1,0 +1,41 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <!--Button-->
+
+    <style name="Button.Dialog.Fill.BorderLess" parent="Widget.AppCompat.Button.Borderless" >
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_height">@dimen/btn_height </item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/cmn_white</item>
+        <item name="android:padding">@dimen/padding_small</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+    <dimen name="btn_height">@dimen/_30sdp</dimen>
+
+    <style name="Button.Dialog.Fill.Medium" parent="Button.Dialog.Fill.BorderLess">
+        <item name="android:layout_height">@dimen/btn_height_medium</item>
+
+    </style>
+
+    <!--Padding-->
+    <dimen name="padding_min">@dimen/_1sdp</dimen>
+    <dimen name="padding_smaller">@dimen/_5sdp</dimen>
+    <dimen name="padding_small">@dimen/_8sdp</dimen>
+    <dimen name="padding_normal">@dimen/_12sdp</dimen>
+    <dimen name="btn_height_medium">@dimen/_35sdp</dimen>
+    <dimen name="input_round_height">@dimen/_35sdp</dimen>
+
+    <!--Text-->
+    <style name="Text.Title" parent="Text.WrapWidth">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/cmn_black</item>
+    </style>
+</resources>

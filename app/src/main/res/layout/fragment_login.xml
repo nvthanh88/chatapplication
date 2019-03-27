@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:padding="@dimen/padding_small">
+    <LinearLayout
+        android:id="@+id/ll_login_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Text.Title"
+            android:textSize="@dimen/text_normal"
+            android:text="社員番号"
+            android:layout_marginBottom="@dimen/padding_small"/>
+        <EditText
+            android:id="@+id/edt_user_name"
+            android:layout_width="match_parent"
+            android:height="@dimen/input_round_height"
+            android:background="@drawable/bg_common_round_grey_border"
+            android:layout_height="wrap_content"
+            android:hint="社員番号"
+            android:imeOptions="actionDone"
+            android:layout_marginBottom="@dimen/padding_small"/>
+        <TextView
+            style="@style/Text.Title"
+            android:layout_width="wrap_content"
+            android:text="パスワード"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_normal"
+            android:layout_marginBottom="@dimen/padding_small"/>
+        <EditText
+            android:id="@+id/edt_password"
+            android:layout_width="match_parent"
+            android:height="@dimen/input_round_height"
+            android:background="@drawable/bg_common_round_grey_border"
+            android:layout_height="wrap_content"
+            android:hint="パスワード"
+            android:imeOptions="actionDone"
+            android:layout_marginBottom="@dimen/padding_small"/>
+
+    </LinearLayout>
+    <Button
+        android:layout_marginTop="@dimen/padding_normal"
+        android:id="@+id/btn_login"
+        android:layout_below="@id/ll_login_input"
+        style="@style/Button.Dialog.Fill.Medium"
+        android:text="ログイン"
+        android:background="@drawable/bg_common_round_orange"
+        android:layout_marginBottom="@dimen/padding_normal"
+        android:textSize="@dimen/text_normal" />
+    <TextView
+        android:id="@+id/btn_forgot_password"
+        android:layout_below="@id/btn_login"
+        android:layout_width="wrap_content"
+        android:text="PWをお忘れの方はこちら"
+        android:layout_height="wrap_content"
+        android:textColor="@color/cmn_blue_text_view"
+        android:textSize="@dimen/text_normal"
+        android:layout_marginBottom="@dimen/padding_small"/>
+</RelativeLayout>
