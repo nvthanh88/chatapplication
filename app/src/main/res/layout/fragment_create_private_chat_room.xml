@@ -6,7 +6,8 @@
 
     <android.support.v7.widget.SearchView
         android:id="@+id/search_view"
-        style="@style/Layout.FillWidth">
+        style="@style/Layout.FillWidth"
+        android:background="@drawable/bg_common_round_white_border_normal">
 
     </android.support.v7.widget.SearchView>
 

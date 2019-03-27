@@ -38,7 +38,7 @@ public class TalkListFragment extends BaseFragment implements TalkListAdapter.On
 
     @Override
     protected int setTitle() {
-        return 0;
+        return R.string.app_name;
     }
 
     @Override

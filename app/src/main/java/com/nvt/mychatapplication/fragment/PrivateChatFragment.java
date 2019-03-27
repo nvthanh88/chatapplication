@@ -134,7 +134,7 @@ public class PrivateChatFragment extends BaseFragment {
 
     @Override
     protected int setTitle() {
-        return 0;
+        return R.string.app_name;
     }
 
     private Emitter.Listener onConnect = new Emitter.Listener() {

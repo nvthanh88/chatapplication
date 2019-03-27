@@ -24,10 +24,10 @@
             android:layout_centerInParent="true"/>
         <ImageView
             android:layout_centerVertical="true"
-            android:id="@+id/btn_search"
+            android:id="@+id/btn_right_function"
             android:layout_width="@dimen/_20sdp"
             android:layout_height="@dimen/_20sdp"
-            android:src="@drawable/ic_search"
+            android:src="@drawable/ic_setting"
             android:layout_alignParentEnd="true"/>
     </RelativeLayout>
 </android.support.v7.widget.Toolbar>

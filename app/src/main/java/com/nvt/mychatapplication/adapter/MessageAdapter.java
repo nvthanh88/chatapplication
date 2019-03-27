@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.nvt.mychatapplication.R;
 import com.nvt.mychatapplication.base.Message;
+import com.nvt.mychatapplication.utils.DateUtils;
 import com.nvt.mychatapplication.utils.Utils;
 
 import java.util.List;
@@ -55,6 +56,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         viewHolder.setMessage(message.getMessage());
         viewHolder.setUsername(message.getUsername());
         viewHolder.setAlign(message.getUsername());
+        viewHolder.setMessageDateTime(System.currentTimeMillis());
 
     }
 
@@ -73,13 +75,14 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         private TextView mMessageView;
         private LinearLayout chatContent;
         private RelativeLayout chatLayout;
-
+        private TextView mMessageDateTime;
         ViewHolder(View itemView) {
             super(itemView);
             mUsernameView = (TextView) itemView.findViewById(R.id.username);
             mMessageView = (TextView) itemView.findViewById(R.id.message);
             chatContent = (LinearLayout) itemView.findViewById(R.id.chat_content);
             chatLayout = (RelativeLayout) itemView.findViewById(R.id.chat_layout);
+            mMessageDateTime = (TextView) itemView.findViewById(R.id.message_date_time);
         }
 
         void setUsername(String username) {
@@ -92,12 +95,19 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
             if (null == mMessageView) return;
             mMessageView.setText(message);
         }
+
+        void setMessageDateTime(long time) {
+            if (null == mMessageDateTime) return;
+            mMessageDateTime.setText(new DateUtils().format(time));
+        }
+
         void setAlign(String userName) {
             //Todo display align right if my self
-            if (null == chatContent) return;
+            if (null == chatContent || null == mMessageDateTime) return;
             if(userName.equals(Utils.getDeviceName())) {
                 chatLayout.setGravity(Gravity.END);
                 chatContent.setBackgroundColor(context.getResources().getColor(R.color.cmn_seek_bar_active));
+
             }
             else {
                 chatLayout.setGravity(Gravity.START);

@@ -37,6 +37,7 @@ public class CreatePrivateRoomFragment extends BaseFragment {
 
     @Override
     protected int setTitle() {
-        return 0;
+        return R.string.app_name;
     }
+
 }

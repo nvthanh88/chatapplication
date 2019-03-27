@@ -29,7 +29,7 @@ import butterknife.Unbinder;
 
 public abstract class BaseFragment extends Fragment {
     protected final String TAG = getClass().getSimpleName();
-    protected BaseActivity mActivity;
+    protected MainActivity mActivity;
     Socket mSocket;
     protected View mView;
     protected Unbinder unbinder;
@@ -39,7 +39,7 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        mActivity = (BaseActivity) context;
+        mActivity = (MainActivity) context;
     }
 
     @Override
@@ -72,7 +72,7 @@ public abstract class BaseFragment extends Fragment {
 
     protected void initView(){
         int toolbarTitle = setTitle();
-        //if(toolbarTitle != 0)mActivity.setToolbarTitle(toolbarTitle);
+        mActivity.setToolbarTitle(toolbarTitle);
         implementUi();
     }
 

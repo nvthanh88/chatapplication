@@ -23,7 +23,6 @@ public class LoginFragment extends BaseFragment {
     @Override
     protected void implementUi() {
 
-
     }
 
     @Override
@@ -35,7 +34,7 @@ public class LoginFragment extends BaseFragment {
     void openTalkList() {
         String username = edtUserName.getText().toString().trim();
         String password = edtPassword.getText().toString().trim();
-        mActivity.openActivity(new MainActivity(),true);
+        openFragment(TalkListFragment.class,null,false,false);
 
     }
     @OnClick(R.id.btn_forgot_password)
