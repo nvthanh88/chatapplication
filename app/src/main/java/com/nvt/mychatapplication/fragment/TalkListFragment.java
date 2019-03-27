@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 public class TalkListFragment extends BaseFragment implements TalkListAdapter.OnItemClickListener {
     private List<Talk> talkList = new ArrayList<>();
@@ -43,5 +44,9 @@ public class TalkListFragment extends BaseFragment implements TalkListAdapter.On
     @Override
     public void onItemClick(int position) {
         openFragment(PrivateChatFragment.class,null,false,true);
+    }
+    @OnClick(R.id.btn_create_private_room)
+    void gotoCreateRoom(){
+        openFragment(CreatePrivateRoomFragment.class,null,false,true);
     }
 }

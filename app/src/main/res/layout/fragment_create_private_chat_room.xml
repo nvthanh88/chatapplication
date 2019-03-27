@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Layout.FillWidthHeight"
+    android:padding="@dimen/padding_small">
+
+    <android.support.v7.widget.SearchView
+        android:id="@+id/search_view"
+        style="@style/Layout.FillWidth">
+
+    </android.support.v7.widget.SearchView>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rcv_staff_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/ll_btn_control"
+        android:layout_below="@id/search_view"
+        android:layout_marginTop="@dimen/padding_small"
+        android:layout_marginBottom="@dimen/padding_small"
+        tools:listitem="@layout/item_staff">
+    </android.support.v7.widget.RecyclerView>
+
+    <LinearLayout
+
+        android:id="@+id/ll_btn_control"
+        style="@style/Layout.FillWidth"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <Button
+            style="@style/Button.Dialog.Fill.Medium"
+            android:layout_marginBottom="@dimen/padding_small"
+            android:background="@drawable/bg_common_round_blue"
+            android:text="トーク開始"
+            android:textSize="@dimen/text_normal" />
+    </LinearLayout>
+</RelativeLayout>

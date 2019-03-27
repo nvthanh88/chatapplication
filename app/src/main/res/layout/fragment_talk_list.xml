@@ -23,6 +23,7 @@
         style="@style/Layout.FillWidth"
         >
         <Button
+            android:id="@+id/btn_create_private_room"
             style="@style/Button.Dialog.Fill.Medium"
             android:background="@drawable/bg_common_round_blue"
             android:textSize="@dimen/text_normal"

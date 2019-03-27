@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Chat Application</string>
+    <string name="app_name">夢チャット</string>
     <string name="action_leave">Leave</string>
     <string name="action_send">Send</string>
     <string name="prompt_message">Message</string>
