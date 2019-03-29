@@ -67,7 +67,7 @@ public class MemberListFragment extends BaseFragment implements SearchView.OnQue
             return true;
         }
         queryString = newText;
-        adapter.getStaffFilter().filter(queryString);
+        adapter.getMemberFilter().filter(queryString);
 
         return true;
     }

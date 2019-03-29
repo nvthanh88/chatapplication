@@ -3,6 +3,7 @@ package com.nvt.mychatapplication.fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
+import android.widget.Toast;
 
 import com.nvt.mychatapplication.R;
 import com.nvt.mychatapplication.adapter.MemberAdapter;
@@ -16,7 +17,7 @@ import java.util.List;
 
 import butterknife.BindView;
 
-public class CreatePrivateChatFragment extends BaseFragment implements SearchView.OnQueryTextListener{
+public class CreatePrivateChatFragment extends BaseFragment implements SearchView.OnQueryTextListener, MemberAdapter.OnCheckBoxClickListener{
     private List<Member> memberList = new ArrayList<>();
     private MemberAdapter memberAdapter;
     @BindView(R.id.rcv_staff_list)
@@ -37,6 +38,7 @@ public class CreatePrivateChatFragment extends BaseFragment implements SearchVie
         memberList.add(2,new Member("19387","鈴木夕子","人材",1));
         memberList.add(3,new Member("29382","山川健二","営業",0));
         memberAdapter = new MemberAdapter(mActivity, memberList, Constant.MemberSelectType.ONE);
+        memberAdapter.setOnCheckBoxClickListener(this);
         rcvStaffList.setLayoutManager(new LinearLayoutManager(mActivity));
         rcvStaffList.setAdapter(memberAdapter);
         //Todo init search
@@ -66,8 +68,19 @@ public class CreatePrivateChatFragment extends BaseFragment implements SearchVie
             return true;
         }
         queryString = newText;
-        memberAdapter.getStaffFilter().filter(queryString);
+        memberAdapter.getMemberFilter().filter(queryString);
 
         return true;
+    }
+
+    @Override
+    public void onCheck(int pos, final List<String> names) {
+        if(mActivity != null) mActivity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(mActivity,"You choose: "+ names,Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }
