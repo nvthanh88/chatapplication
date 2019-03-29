@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.nvt.mychatapplication.R;
 import com.nvt.mychatapplication.model.Staff;
-import com.nvt.mychatapplication.model.Talk;
 
 import java.util.ArrayList;
 import java.util.List;

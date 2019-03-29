@@ -3,7 +3,6 @@ package com.nvt.mychatapplication.fragment;
 import android.widget.EditText;
 
 import com.nvt.mychatapplication.R;
-import com.nvt.mychatapplication.activity.MainActivity;
 import com.nvt.mychatapplication.base.BaseFragment;
 
 import butterknife.BindView;

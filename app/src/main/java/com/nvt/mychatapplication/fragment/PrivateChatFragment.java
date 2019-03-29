@@ -24,6 +24,7 @@ import com.nvt.mychatapplication.R;
 import com.nvt.mychatapplication.activity.MainActivity;
 import com.nvt.mychatapplication.adapter.MessageAdapter;
 import com.nvt.mychatapplication.application.ChatApplication;
+import com.nvt.mychatapplication.application.Constant;
 import com.nvt.mychatapplication.base.BaseFragment;
 import com.nvt.mychatapplication.base.Message;
 import com.nvt.mychatapplication.utils.Utils;
@@ -57,12 +58,18 @@ public class PrivateChatFragment extends BaseFragment {
     @BindView(R.id.send_button)
     ImageView btnSend;
 
+    String roomName ;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ChatApplication app = (ChatApplication) mActivity.getApplication();
         mSocket = app.getmSocket();
         mUsername = Utils.getDeviceName();
+
+        Bundle bundle = getArguments();
+        if (bundle != null && bundle.containsKey(Constant.ROOM)) {
+            roomName = bundle.getString(Constant.ROOM, "");
+        }
         if (mSocket != null) {
             Toast.makeText(mActivity, "Connect success", Toast.LENGTH_LONG).show();
             mSocket.on(Socket.EVENT_CONNECT, onConnect);
@@ -86,6 +93,8 @@ public class PrivateChatFragment extends BaseFragment {
 
     @Override
     protected void implementUi() {
+        //Todo load room name
+        mActivity.setToolbarTitle(roomName);
         //Todo load chat history if exits
         mAdapter = new MessageAdapter(mActivity, mMessages);
         mMessagesView.setLayoutManager(new LinearLayoutManager(mActivity));

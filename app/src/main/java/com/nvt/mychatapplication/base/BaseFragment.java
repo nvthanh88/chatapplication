@@ -52,6 +52,8 @@ public abstract class BaseFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        int toolbarTitle = setTitle();
+        mActivity.setToolbarTitle(toolbarTitle);
         int mFragmentView = setView();
         if (mView == null) {
             mView = inflater.inflate(mFragmentView, container, false);
@@ -71,8 +73,6 @@ public abstract class BaseFragment extends Fragment {
     }
 
     protected void initView(){
-        int toolbarTitle = setTitle();
-        mActivity.setToolbarTitle(toolbarTitle);
         implementUi();
     }
 

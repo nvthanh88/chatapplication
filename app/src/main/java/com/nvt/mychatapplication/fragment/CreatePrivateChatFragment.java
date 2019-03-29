@@ -15,7 +15,7 @@ import java.util.List;
 
 import butterknife.BindView;
 
-public class CreatePrivateRoomFragment extends BaseFragment implements SearchView.OnQueryTextListener{
+public class CreatePrivateChatFragment extends BaseFragment implements SearchView.OnQueryTextListener{
     private List<Staff> staffList = new ArrayList<>();
     private StaffAdapter staffAdapter ;
     @BindView(R.id.rcv_staff_list)

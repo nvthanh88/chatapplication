@@ -1,23 +1,19 @@
 package com.nvt.mychatapplication.fragment;
 
-import android.content.Context;
-import android.os.AsyncTask;
+import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.Toast;
 
 import com.nvt.mychatapplication.R;
 import com.nvt.mychatapplication.adapter.TalkListAdapter;
+import com.nvt.mychatapplication.application.Constant;
 import com.nvt.mychatapplication.base.BaseFragment;
 import com.nvt.mychatapplication.model.Talk;
 import com.nvt.mychatapplication.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -31,7 +27,6 @@ public class TalkListFragment extends BaseFragment implements TalkListAdapter.On
     @BindView(R.id.search_view)
     SearchView mSearchView;
     private String queryString;
-    private InputMethodManager mImm;
     @Override
     protected int setView() {
         return R.layout.fragment_talk_list;
@@ -64,14 +59,18 @@ public class TalkListFragment extends BaseFragment implements TalkListAdapter.On
 
     @Override
     public void onItemClick(int position, String roomName) {
-        Toast.makeText(mActivity,"Join room: "+roomName,Toast.LENGTH_SHORT).show();
-        openFragment(PrivateChatFragment.class,null,false,true);
+        Bundle b = new Bundle();
+        b.putString(Constant.ROOM,roomName);
+        openFragment(PrivateChatFragment.class,b,false,true);
     }
     @OnClick(R.id.btn_create_private_room)
     void gotoCreateRoom(){
-        openFragment(CreatePrivateRoomFragment.class,null,false,true);
+        openFragment(CreatePrivateChatFragment.class,null,false,true);
     }
-
+    @OnClick(R.id.btn_create_group_chat)
+    void gotoCreateGroupChat(){
+        openFragment(CreateGroupChatFragment.class,null,false,true);
+    }
 
     /*
     * Talk list real time searching
