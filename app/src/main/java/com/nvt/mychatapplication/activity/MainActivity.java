@@ -1,20 +1,19 @@
 package com.nvt.mychatapplication.activity;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.nvt.mychatapplication.R;
 
 import com.nvt.mychatapplication.application.ChatApplication;
+import com.nvt.mychatapplication.application.Constant;
 import com.nvt.mychatapplication.base.BaseActivity;
-import com.nvt.mychatapplication.base.BaseFragment;
 import com.nvt.mychatapplication.fragment.LoginFragment;
+import com.nvt.mychatapplication.fragment.MemberListFragment;
 import com.nvt.mychatapplication.fragment.SettingFragment;
 
 import butterknife.BindView;
@@ -28,7 +27,11 @@ public class MainActivity extends BaseActivity {
     TextView toolbarTitle;
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
-
+    @BindView(R.id.btn_right_function)
+    ImageView rightFunction;
+    @BindView(R.id.btn_member_management)
+    TextView btnMemberManagement;
+    Constant.FunctionType functionType = Constant.FunctionType.SETTING;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_main);
@@ -37,6 +40,11 @@ public class MainActivity extends BaseActivity {
         mApplication = (ChatApplication) getApplication();
         attachFragment(LoginFragment.class, null, false, false);
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
     public void setToolbarTitle(int title) {
@@ -57,9 +65,9 @@ public class MainActivity extends BaseActivity {
         }
     }
 
-    @OnClick(R.id.btn_right_function)
-    void implementFunction() {
-        attachFragment(SettingFragment.class, null, false, true);
+    @OnClick(R.id.btn_member_management)
+    void openMemberManagmentScreen() {
+        attachFragment(MemberListFragment.class, null, false, true);
     }
 
 
@@ -71,6 +79,20 @@ public class MainActivity extends BaseActivity {
 
     public void showToolBar(boolean isShow) {
         mToolbar.setVisibility(isShow ? View.VISIBLE : View.GONE);
+    }
+
+    public void setTopBarFunction(Constant.FunctionType function, boolean enableMemberManage){
+        switch (function){
+            case SEARCH:
+                rightFunction.setImageResource(R.drawable.ic_search);
+                functionType = Constant.FunctionType.SEARCH;
+                break;
+            case SETTING:
+                rightFunction.setImageResource(R.drawable.ic_setting);
+                functionType = Constant.FunctionType.SETTING;
+                break;
+        }
+        btnMemberManagement.setVisibility(enableMemberManage?View.VISIBLE:View.INVISIBLE);
     }
 
 }

@@ -1,6 +1,7 @@
 package com.nvt.mychatapplication.fragment;
 
 import com.nvt.mychatapplication.R;
+import com.nvt.mychatapplication.application.Constant;
 import com.nvt.mychatapplication.base.BaseFragment;
 
 public class CreateGroupChatFragment extends BaseFragment {
@@ -11,6 +12,7 @@ public class CreateGroupChatFragment extends BaseFragment {
 
     @Override
     protected void implementUi() {
+
 
     }
 

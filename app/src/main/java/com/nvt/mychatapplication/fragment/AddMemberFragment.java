@@ -16,7 +16,8 @@ import java.util.List;
 
 import butterknife.BindView;
 
-public class CreatePrivateChatFragment extends BaseFragment implements SearchView.OnQueryTextListener{
+public class AddMemberFragment extends BaseFragment implements SearchView.OnQueryTextListener{
+
     private List<Member> memberList = new ArrayList<>();
     private MemberAdapter memberAdapter;
     @BindView(R.id.rcv_staff_list)
@@ -27,7 +28,7 @@ public class CreatePrivateChatFragment extends BaseFragment implements SearchVie
 
     @Override
     protected int setView() {
-        return R.layout.fragment_create_private_chat_room;
+        return R.layout.fragment_member_management;
     }
 
     @Override
@@ -36,7 +37,7 @@ public class CreatePrivateChatFragment extends BaseFragment implements SearchVie
         memberList.add(1,new Member("04938","山田花子","給与",1));
         memberList.add(2,new Member("19387","鈴木夕子","人材",1));
         memberList.add(3,new Member("29382","山川健二","営業",0));
-        memberAdapter = new MemberAdapter(mActivity, memberList, Constant.MemberSelectType.ONE);
+        memberAdapter = new MemberAdapter(mActivity, memberList, Constant.MemberSelectType.MULTI);
         rcvStaffList.setLayoutManager(new LinearLayoutManager(mActivity));
         rcvStaffList.setAdapter(memberAdapter);
         //Todo init search

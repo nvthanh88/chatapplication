@@ -58,10 +58,12 @@ public class TalkListFragment extends BaseFragment implements TalkListAdapter.On
     }
 
     @Override
-    public void onItemClick(int position, String roomName) {
+    public void onItemClick(int position, String roomName, boolean isGroupChat) {
         Bundle b = new Bundle();
         b.putString(Constant.ROOM,roomName);
-        openFragment(PrivateChatFragment.class,b,false,true);
+        b.putBoolean(Constant.IS_GROUP_CHAT,isGroupChat);
+        if(!isGroupChat)openFragment(PrivateChatFragment.class,b,false,true);
+        else openFragment(GroupChatFragment.class,b,false,true);
     }
     @OnClick(R.id.btn_create_private_room)
     void gotoCreateRoom(){

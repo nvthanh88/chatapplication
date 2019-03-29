@@ -1,19 +1,19 @@
 package com.nvt.mychatapplication.model;
 
-public class Staff {
+public class Member {
     public String id;
     public String name;
     public String position;
     public long avatarId;
 
-    public Staff() {
+    public Member() {
         this.id = "";
         this.name = "-";
         this.avatarId = 0;
         this.position = "";
     }
 
-    public Staff(String id, String name,String position, long avatarId) {
+    public Member(String id, String name, String position, long avatarId) {
         this.id = id;
         this.name = name;
         this.position = position;

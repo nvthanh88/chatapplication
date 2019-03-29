@@ -48,7 +48,7 @@ public class TalkListAdapter extends RecyclerView.Adapter<TalkListAdapter.ViewHo
         viewHolder.talkRoomItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mOnItemClickListener.onItemClick(position,talk.chatName);
+                mOnItemClickListener.onItemClick(position,talk.chatName, talk.avatarId == 1);
             }
         });
     }
@@ -76,7 +76,7 @@ public class TalkListAdapter extends RecyclerView.Adapter<TalkListAdapter.ViewHo
     }
 
     public interface OnItemClickListener {
-        void onItemClick(int position, String roomName);
+        void onItemClick(int position, String roomName, boolean isGroupChat);
     }
 
     public void setOnItemClickListener(OnItemClickListener listener) {

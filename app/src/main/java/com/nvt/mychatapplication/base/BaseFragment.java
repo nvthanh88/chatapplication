@@ -18,6 +18,9 @@ import com.github.nkzawa.socketio.client.Socket;
 import com.nvt.mychatapplication.R;
 import com.nvt.mychatapplication.activity.MainActivity;
 import com.nvt.mychatapplication.application.ChatApplication;
+import com.nvt.mychatapplication.application.Constant;
+import com.nvt.mychatapplication.fragment.GroupChatFragment;
+import com.nvt.mychatapplication.fragment.PrivateChatFragment;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,7 +33,6 @@ import butterknife.Unbinder;
 public abstract class BaseFragment extends Fragment {
     protected final String TAG = getClass().getSimpleName();
     protected MainActivity mActivity;
-    Socket mSocket;
     protected View mView;
     protected Unbinder unbinder;
     boolean mIsViewInitialized;
@@ -52,8 +54,7 @@ public abstract class BaseFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        int toolbarTitle = setTitle();
-        mActivity.setToolbarTitle(toolbarTitle);
+        initTopBarView();
         int mFragmentView = setView();
         if (mView == null) {
             mView = inflater.inflate(mFragmentView, container, false);
@@ -72,6 +73,15 @@ public abstract class BaseFragment extends Fragment {
         return mView;
     }
 
+    private void initTopBarView() {
+        int toolbarTitle = setTitle();
+        mActivity.setToolbarTitle(toolbarTitle);
+        if(this instanceof PrivateChatFragment) mActivity.setTopBarFunction(Constant.FunctionType.SEARCH,false);
+        else if(this instanceof GroupChatFragment) mActivity.setTopBarFunction(Constant.FunctionType.SEARCH,true);
+        else mActivity.setTopBarFunction(Constant.FunctionType.SETTING,false);
+
+    }
+
     protected void initView(){
         implementUi();
     }
@@ -79,155 +89,6 @@ public abstract class BaseFragment extends Fragment {
     protected abstract int setView();
     protected abstract void implementUi();
     protected abstract int setTitle();
-
-
-
-    private Emitter.Listener onConnect = new Emitter.Listener() {
-        @Override
-        public void call(Object... args) {
-            mActivity.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    //Todo on connect
-                }
-            });
-        }
-    };
-
-    private Emitter.Listener onDisconnect = new Emitter.Listener() {
-        @Override
-        public void call(Object... args) {
-            mActivity.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    Log.i(TAG, "diconnected");
-
-                }
-            });
-        }
-    };
-
-    private Emitter.Listener onConnectError = new Emitter.Listener() {
-        @Override
-        public void call(Object... args) {
-            mActivity.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    Log.e(TAG, "Error connecting");
-
-                }
-            });
-        }
-    };
-
-    private Emitter.Listener onNewMessage = new Emitter.Listener() {
-        @Override
-        public void call(final Object... args) {
-            mActivity.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    JSONObject data = (JSONObject) args[0];
-                    String username;
-                    String message;
-                    try {
-                        username = data.getString("username");
-                        message = data.getString("message");
-                    } catch (JSONException e) {
-                        Log.e(TAG, e.getMessage());
-                    }
-
-
-                }
-            });
-        }
-    };
-
-    private Emitter.Listener onUserJoined = new Emitter.Listener() {
-        @Override
-        public void call(final Object... args) {
-            mActivity.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    JSONObject data = (JSONObject) args[0];
-                    String username;
-                    int numUsers;
-                    try {
-                        username = data.getString("username");
-                        numUsers = data.getInt("numUsers");
-                    } catch (JSONException e) {
-                        Log.e(TAG, e.getMessage());
-                    }
-
-
-                }
-            });
-        }
-    };
-
-    private Emitter.Listener onUserLeft = new Emitter.Listener() {
-        @Override
-        public void call(final Object... args) {
-            mActivity.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    JSONObject data = (JSONObject) args[0];
-                    String username;
-                    int numUsers;
-                    try {
-                        username = data.getString("username");
-                        numUsers = data.getInt("numUsers");
-                    } catch (JSONException e) {
-                        Log.e(TAG, e.getMessage());
-                    }
-
-
-                }
-            });
-        }
-    };
-
-    private Emitter.Listener onTyping = new Emitter.Listener() {
-        @Override
-        public void call(final Object... args) {
-            mActivity.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    JSONObject data = (JSONObject) args[0];
-                    String username;
-                    try {
-                        username = data.getString("username");
-                    } catch (JSONException e) {
-                        Log.e(TAG, e.getMessage());
-                    }
-                }
-            });
-        }
-    };
-
-    private Emitter.Listener onStopTyping = new Emitter.Listener() {
-        @Override
-        public void call(final Object... args) {
-            mActivity.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    JSONObject data = (JSONObject) args[0];
-                    String username;
-                    try {
-                        username = data.getString("username");
-                    } catch (JSONException e) {
-                        Log.e(TAG, e.getMessage());
-                    }
-                }
-            });
-        }
-    };
-
-    private Runnable onTypingTimeout = new Runnable() {
-        @Override
-        public void run() {
-
-        }
-    };
 
     public void openFragment(Class<? extends BaseFragment> fragmentClass, Bundle bundles, boolean isAnimate,
                              boolean isAddToBackStack) {
