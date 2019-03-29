@@ -21,11 +21,12 @@ import com.nvt.mychatapplication.utils.Utils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHolder>{
+public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHolder> {
     private List<Message> mMessages;
     private List<Message> orig;
     private int[] mUsernameColors;
     private Context context;
+
     public MessageAdapter(Context context, List<Message> messages) {
         this.context = context;
         mMessages = messages;
@@ -79,6 +80,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         private LinearLayout chatContent;
         private RelativeLayout chatLayout;
         private TextView mMessageDateTime;
+
         ViewHolder(View itemView) {
             super(itemView);
             mUsernameView = (TextView) itemView.findViewById(R.id.username);
@@ -107,12 +109,11 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         void setAlign(String userName) {
             //Todo display align right if my self
             if (null == chatContent || null == mMessageDateTime) return;
-            if(userName.equals(Utils.getDeviceName())) {
+            if (userName.equals(Utils.getDeviceName())) {
                 chatLayout.setGravity(Gravity.END);
                 chatContent.setBackgroundColor(context.getResources().getColor(R.color.cmn_seek_bar_active));
 
-            }
-            else {
+            } else {
                 chatLayout.setGravity(Gravity.START);
                 chatContent.setBackgroundColor(context.getResources().getColor(R.color.cmn_tab_indicator));
             }
@@ -127,6 +128,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
             return mUsernameColors[index];
         }
     }
+
     public Filter getMessageFilter() {
         return new Filter() {
             @Override
@@ -150,10 +152,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
             @Override
             protected void publishResults(CharSequence constraint, FilterResults results) {
                 mMessages = (List<Message>) results.values;
-                if(mMessages.size() ==0)  mMessages.add(new Message.Builder(Message.TYPE_LOG)
-                        .message("No result for: "+constraint).build());
                 notifyDataSetChanged();
-
             }
         };
     }

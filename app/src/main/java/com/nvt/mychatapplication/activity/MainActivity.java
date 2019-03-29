@@ -71,6 +71,10 @@ public class MainActivity extends BaseActivity {
             } else showToolBar(false);
         }
     }
+    public void showSearchView(boolean isShow) {
+        searchView.setVisibility(isShow ? View.VISIBLE : View.GONE);
+    }
+
 
     @OnClick(R.id.btn_member_management)
     void openMemberManagementScreen() {

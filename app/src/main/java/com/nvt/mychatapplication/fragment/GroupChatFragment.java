@@ -399,4 +399,11 @@ public class GroupChatFragment extends BaseFragment implements MainActivity.OnSe
     public void search(String key) {
         ((MessageAdapter)mAdapter).getMessageFilter().filter(key);
     }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        mActivity.showSearchView(false);
+    }
+
 }
