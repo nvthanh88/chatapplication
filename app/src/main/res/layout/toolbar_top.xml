@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.Toolbar
+<LinearLayout
     android:id="@+id/toolbar"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/btn_height_medium"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
     android:background="@color/cmn_yellow"
-    android:padding="@dimen/padding_min"
-    >
+    android:padding="@dimen/padding_min">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="@dimen/btn_height_medium"
         android:orientation="vertical">
         <ImageView
             android:id="@+id/btn_back"
@@ -40,5 +40,11 @@
             android:src="@drawable/ic_setting"
             android:layout_alignParentEnd="true"/>
     </RelativeLayout>
-</android.support.v7.widget.Toolbar>
+    <android.support.v7.widget.SearchView
+        android:visibility="gone"
+        android:id="@+id/search_view"
+        style="@style/Layout.FillWidth"
+        android:background="@drawable/bg_common_round_white_border_normal">
+    </android.support.v7.widget.SearchView>
+</LinearLayout>
 

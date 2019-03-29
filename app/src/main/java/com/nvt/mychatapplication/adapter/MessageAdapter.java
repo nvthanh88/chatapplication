@@ -8,6 +8,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -17,10 +18,12 @@ import com.nvt.mychatapplication.base.Message;
 import com.nvt.mychatapplication.utils.DateUtils;
 import com.nvt.mychatapplication.utils.Utils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHolder>{
     private List<Message> mMessages;
+    private List<Message> orig;
     private int[] mUsernameColors;
     private Context context;
     public MessageAdapter(Context context, List<Message> messages) {
@@ -123,5 +126,35 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
             int index = Math.abs(hash % mUsernameColors.length);
             return mUsernameColors[index];
         }
+    }
+    public Filter getMessageFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                final FilterResults oReturn = new FilterResults();
+                final List<Message> results = new ArrayList<>();
+                if (orig == null)
+                    orig = mMessages;
+                if (constraint != null) {
+                    if (orig != null && orig.size() > 0) {
+                        for (final Message message : orig) {
+                            if (message.getMessage().toLowerCase().contains(constraint.toString()))
+                                results.add(message);
+                        }
+                    }
+                    oReturn.values = results;
+                }
+                return oReturn;
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+                mMessages = (List<Message>) results.values;
+                if(mMessages.size() ==0)  mMessages.add(new Message.Builder(Message.TYPE_LOG)
+                        .message("No result for: "+constraint).build());
+                notifyDataSetChanged();
+
+            }
+        };
     }
 }

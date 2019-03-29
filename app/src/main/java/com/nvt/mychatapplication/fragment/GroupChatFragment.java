@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.github.nkzawa.emitter.Emitter;
 import com.github.nkzawa.socketio.client.Socket;
 import com.nvt.mychatapplication.R;
+import com.nvt.mychatapplication.activity.MainActivity;
 import com.nvt.mychatapplication.adapter.MessageAdapter;
 import com.nvt.mychatapplication.application.ChatApplication;
 import com.nvt.mychatapplication.application.Constant;
@@ -37,7 +38,7 @@ import butterknife.BindView;
 
 import static com.github.nkzawa.socketio.client.Socket.EVENT_MESSAGE;
 
-public class GroupChatFragment extends BaseFragment {
+public class GroupChatFragment extends BaseFragment implements MainActivity.OnSearchingListener {
     private static final long TYPING_TIMER_LENGTH = 200;
     private List<Message> mMessages = new ArrayList<>();
     private RecyclerView.Adapter mAdapter;
@@ -93,6 +94,7 @@ public class GroupChatFragment extends BaseFragment {
     protected void implementUi() {
         //Todo load room name
         mActivity.setToolbarTitle(roomName);
+        mActivity.setOnSearchingListener(this);
         //Todo load chat history if exits
         mAdapter = new MessageAdapter(mActivity, mMessages);
         mMessagesView.setLayoutManager(new LinearLayoutManager(mActivity));
@@ -393,4 +395,8 @@ public class GroupChatFragment extends BaseFragment {
         mSocket.off("stoptyping", onStopTyping);
     }
 
+    @Override
+    public void search(String key) {
+        ((MessageAdapter)mAdapter).getMessageFilter().filter(key);
+    }
 }
