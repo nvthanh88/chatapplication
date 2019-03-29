@@ -40,7 +40,7 @@
            android:id="@+id/check_box"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:layout_gravity="end"
+           android:layout_gravity="center_vertical|end"
            android:textStyle="bold"
            android:textSize="@dimen/text_small"
            android:checkMark="?android:attr/listChoiceIndicatorSingle"

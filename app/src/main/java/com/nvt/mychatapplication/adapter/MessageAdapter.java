@@ -77,7 +77,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
     class ViewHolder extends RecyclerView.ViewHolder {
         private TextView mUsernameView;
         private TextView mMessageView;
-        private LinearLayout chatContent;
         private RelativeLayout chatLayout;
         private TextView mMessageDateTime;
 
@@ -85,7 +84,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
             super(itemView);
             mUsernameView = (TextView) itemView.findViewById(R.id.username);
             mMessageView = (TextView) itemView.findViewById(R.id.message);
-            chatContent = (LinearLayout) itemView.findViewById(R.id.chat_content);
             chatLayout = (RelativeLayout) itemView.findViewById(R.id.chat_layout);
             mMessageDateTime = (TextView) itemView.findViewById(R.id.message_date_time);
         }
@@ -108,14 +106,14 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
         void setAlign(String userName) {
             //Todo display align right if my self
-            if (null == chatContent || null == mMessageDateTime) return;
+            if (null == chatLayout || null == mMessageDateTime) return;
             if (userName.equals(Utils.getDeviceName())) {
                 chatLayout.setGravity(Gravity.END);
-                chatContent.setBackgroundColor(context.getResources().getColor(R.color.cmn_seek_bar_active));
+                mMessageView.setBackground(context.getResources().getDrawable(R.drawable.bg_common_round_blue));
 
             } else {
                 chatLayout.setGravity(Gravity.START);
-                chatContent.setBackgroundColor(context.getResources().getColor(R.color.cmn_tab_indicator));
+                mMessageView.setBackground(context.getResources().getDrawable(R.drawable.bg_common_round_orange));
             }
         }
 

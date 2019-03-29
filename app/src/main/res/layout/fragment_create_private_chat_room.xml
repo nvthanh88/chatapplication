@@ -7,6 +7,7 @@
     <android.support.v7.widget.SearchView
         android:id="@+id/search_view"
         style="@style/Layout.FillWidth"
+        android:layout_height="@dimen/btn_height"
         android:background="@drawable/bg_common_round_white_border_normal">
 
     </android.support.v7.widget.SearchView>
@@ -19,7 +20,7 @@
         android:layout_below="@id/search_view"
         android:layout_marginTop="@dimen/padding_small"
         android:layout_marginBottom="@dimen/padding_small"
-        tools:listitem="@layout/item_staff">
+        tools:listitem="@layout/item_member">
     </android.support.v7.widget.RecyclerView>
 
     <LinearLayout

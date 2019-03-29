@@ -325,7 +325,7 @@ public class GroupChatFragment extends BaseFragment implements MainActivity.OnSe
     }
 
     private void addParticipantsLog(int numUsers) {
-        addLog(getResources().getQuantityString(R.plurals.message_participants, numUsers, numUsers));
+        //addLog(getResources().getQuantityString(R.plurals.message_participants, numUsers, numUsers));
     }
 
     private void addMessage(String username, String message) {
