@@ -46,7 +46,7 @@ public class MemberListFragment extends BaseFragment implements SearchView.OnQue
 
     @Override
     protected int setTitle() {
-        return R.string.app_name;
+        return R.string.list_member;
     }
 
     /*

@@ -19,7 +19,6 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 public class TalkListFragment extends BaseFragment implements TalkListAdapter.OnItemClickListener, SearchView.OnQueryTextListener {
-    private static final int MAX_RESULT_DISPLAY = 20;
     private List<Talk> talks = new ArrayList<>();
     private TalkListAdapter talkListAdapter ;
     @BindView(R.id.rcv_talk_list)
@@ -54,7 +53,7 @@ public class TalkListFragment extends BaseFragment implements TalkListAdapter.On
 
     @Override
     protected int setTitle() {
-        return R.string.app_name;
+        return R.string.talk_list_title;
     }
 
     @Override

@@ -9,4 +9,6 @@ public class Constant {
     public enum MemberSelectType{
         ONE,MULTI,NONE
     }
+    public static final int MAX_RESULT_DISPLAY = 20;
+
 }

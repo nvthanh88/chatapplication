@@ -47,7 +47,7 @@ public class CreatePrivateChatFragment extends BaseFragment implements SearchVie
 
     @Override
     protected int setTitle() {
-        return R.string.app_name;
+        return R.string.create_room_private_title;
     }
 
     /*

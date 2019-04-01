@@ -18,6 +18,6 @@ public class CreateGroupChatFragment extends BaseFragment {
 
     @Override
     protected int setTitle() {
-        return R.string.app_name;
+        return R.string.create_group_title;
     }
 }

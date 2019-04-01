@@ -16,7 +16,7 @@ public class SettingFragment extends BaseFragment {
 
     @Override
     protected int setTitle() {
-        return R.string.app_name;
+        return R.string.setting_screen_title;
     }
 
 }

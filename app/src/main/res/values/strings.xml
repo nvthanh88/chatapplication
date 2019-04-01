@@ -17,4 +17,13 @@
     <string name="message_user_joined">%s joined</string>
     <string name="message_user_left">%s left</string>
     <string name="user_action_typing">is typing</string>
+    <!--Screen title-->
+    <string name="talk_list_title">トーク</string>
+    <string name="create_room_private_title">トークルーム追加</string>
+    <string name="create_group_title">グループトークルーム追加</string>
+    <string name="list_member">第一グループ</string>
+    <string name="add_member">グループ追加</string>
+    <string name="setting_screen_title">設定</string>
+    <string name="notification">非表示ルーム</string>
+
 </resources>
