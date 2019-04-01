@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'com.google.gms.google-services'
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -38,4 +38,9 @@ dependencies {
     //Picasso
     implementation 'com.squareup.picasso:picasso:2.5.2'
 
+    //Fire base
+    implementation 'com.google.firebase:firebase-core:16.0.8'
+    implementation 'com.google.firebase:firebase-iid:17.1.1'
+    implementation 'com.google.firebase:firebase-messaging:17.5.0'
+    implementation 'android.arch.work:work-runtime:1.0.0'
 }

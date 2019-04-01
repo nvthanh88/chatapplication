@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@color/cmn_yellow"
+    android:background="@color/cmn_tab_indicator"
     android:padding="@dimen/padding_min">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -14,7 +14,9 @@
         <ImageView
             android:id="@+id/btn_back"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            android:layout_centerVertical="true"/>
         <TextView
             android:id="@+id/tool_bar_title"
             android:layout_width="wrap_content"

@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.nvt.mychatapplication.R;
 
 import com.nvt.mychatapplication.application.ChatApplication;
@@ -44,6 +45,9 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
+        FirebaseMessaging.getInstance().subscribeToTopic("messaging_private");
+
+
         mApplication = (ChatApplication) getApplication();
         attachFragment(LoginFragment.class, null, false, false);
 
@@ -147,6 +151,11 @@ public class MainActivity extends BaseActivity {
     }
     public void setOnSearchingListener(OnSearchingListener listener){
         mOnSearchingListener = listener;
+    }
+
+    @OnClick(R.id.btn_back)
+    void backToPrevious(){
+        super.onBackPressed();
     }
 
 }

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="夢真"
+        android:layout_marginBottom="@dimen/padding_small"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginBottom="@dimen/padding_small">
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="高橋太郎"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2019/01/10 14:18"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/chat_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="来週の月曜日に連絡ください。"/>
+</LinearLayout>

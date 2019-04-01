@@ -24,6 +24,6 @@
     <string name="list_member">第一グループ</string>
     <string name="add_member">グループ追加</string>
     <string name="setting_screen_title">設定</string>
-    <string name="notification">非表示ルーム</string>
-
+    <string name="hidden_room">非表示ルーム</string>
+    <string name="default_notification_channel_id">chat</string>
 </resources>

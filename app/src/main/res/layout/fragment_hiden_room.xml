@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_small">
+    <TextView
+        style="@style/Text.Title"
+        android:height="@dimen/btn_height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_common_round_white_border_normal"
+        android:text="第一グループ"
+        android:layout_marginBottom="@dimen/padding_min"/>
+    <TextView
+        style="@style/Text.Title"
+        android:height="@dimen/btn_height"
+        android:layout_width="match_parent"
+        android:background="@drawable/bg_common_round_white_border_normal"
+        android:layout_height="wrap_content"
+        android:text="02918 高橋太郎　給与"/>
+</LinearLayout>

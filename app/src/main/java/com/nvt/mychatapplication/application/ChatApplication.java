@@ -9,7 +9,7 @@ import java.net.URISyntaxException;
 
 public class ChatApplication extends Application {
     private Socket mSocket;
-    private static final String URL = "http://35.241.103.186:8080";
+    private static final String URL = "http://34.92.14.1:8080";
     @Override
     public void onCreate() {
         super.onCreate();
